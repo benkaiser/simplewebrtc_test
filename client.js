@@ -11,8 +11,9 @@ webrtc.on('readyToCall', function () {
   webrtc.joinRoom('default');
 
   webrtc.on('channelMessage', function (peer, label, data) {
+    console.log(peer);
     console.log(data);
-    document.body.innerHTML += '<p>Peer sent us message: "' + data.payload + '"</p>';
+    document.body.innerHTML += '<p>Peer ' + peer.id + ' sent us message: "' + data.payload + '"</p>';
   });
 });
 
